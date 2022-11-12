@@ -11,6 +11,12 @@
 
 ## What frameworks/libraries to use?
 - React
-  - State Management: Context API
+  - State Management: Redux
   - Styles: Styled Components
-- Node.js
+- Node.js (~2023, currently working with mock APIs)
+
+## Milestones
+- ~ 11/13: Migrate Navigation Icons to Redux
+- ~ 11/20: Create Accommodation Card, Card List (getting data using Redux)
+- ~ 11/27: Whishlist Barebone, Addition to Wishlist, Deletion from Wishlist
+- 2023 January ~: Migrate Mock APIs to Node.js REST APIs

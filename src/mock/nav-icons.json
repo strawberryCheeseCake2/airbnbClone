@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "src": "/assets/amazing-views-icon.jpg",
+    "route": "amazing-views/",
+    "name": "Amazing views"
+  },
+  {
+    "id": 2,
+    "src": "/assets/beach-icon.jpg",
+    "route": "beach/",
+    "name": "Beach"
+  }
+]

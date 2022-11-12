@@ -6,7 +6,7 @@ export const SearchBarContainer = styled.div`
   background-color: white;
   height: 3.5rem;
   width: 30rem;
-  border: 1px solid #BEBEBE;
+  border: 2px solid #EBECF0;
   border-radius: 50px;
   box-shadow: 0 0 10px 3px #EBECF0;
 

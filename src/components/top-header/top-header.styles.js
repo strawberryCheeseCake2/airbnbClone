@@ -8,6 +8,7 @@ export const TopHeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 5rem 1.5rem 5rem;
+  border-bottom: 1px solid #ebecf0;
 `;
 
 export const AirbnbLogo = styled(Logo)`
