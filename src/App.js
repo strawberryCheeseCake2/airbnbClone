@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import Header from './routes/header/header.component';
+import Header from './infrastructure/header/header.component';
 import Beach from './routes/category/beach.component';
 import AmazingViews from './routes/category/amazing-views.component';
 
