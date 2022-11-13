@@ -7,7 +7,7 @@ export const NavBarIconImg = styled.img`
 
 export const NavBarIconContainer = styled.div`
   opacity: 0.4;
-  transition: opacity 0.5s;
+  transition: opacity 0.3s;
   &:hover {
     opacity: 1;
   }

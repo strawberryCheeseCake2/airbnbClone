@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { ReactComponent as Logo } from "../../../svgs/logo.svg";
 
 export const TopHeaderContainer = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ReactComponent as SearchButtonIconSrc } from "../../../assets/search-icon.svg";
+import { ReactComponent as SearchButtonIconSrc } from "../../../../svgs/search-icon.svg";
 
 export const SearchBarContainer = styled.div`
   background-color: white;
