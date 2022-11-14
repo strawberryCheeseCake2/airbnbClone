@@ -1,8 +1,14 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const ProfileDropdown = () => {
   return (
-    <div>ProfileDropdown</div>
+    <>
+    {/* ProfileDropdown */}
+      <Link to="wishlist/" style={{textDecoration: "none", color: "black"}}>
+        Wishlist
+      </Link>
+    </>
   )
 }
 

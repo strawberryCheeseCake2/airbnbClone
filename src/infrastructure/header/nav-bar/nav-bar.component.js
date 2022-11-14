@@ -12,11 +12,9 @@ const NavBar = () => {
   const icons = useSelector((state) => state.navBar.icons);
   const navBarIconStatus = useSelector((state) => state.navBar.status)
   const error = useSelector((state) => state.navBar.error)
-
+  
   useEffect(() => {
-    console.log("useEffect!")
     if (navBarIconStatus === 'idle') {
-      console.log("dispatch fetch")
       dispatch(fetchNavIcons())
     }
   }, [navBarIconStatus, dispatch]);

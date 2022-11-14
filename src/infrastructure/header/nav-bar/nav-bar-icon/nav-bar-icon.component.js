@@ -11,15 +11,14 @@ import {
 
 const NavBarIcon = (props) => {
   const { icon } = props;
-  const { id, src, name, route } = icon;
+  const { id, src, title, category } = icon;
 
   const dispatch = useDispatch();
   const icons = useSelector((state) => state.navBar.icons);
 
- 
   return (
     <>
-      <Link to={`category=${route}`} style={{ textDecoration: "none" }}>
+      <Link to={`category=${id}/`} style={{ textDecoration: "none" }}>
         <NavBarIconContainer
           onClick={() => dispatch(handleClick(id))}
           onMouseOver={() => dispatch(handleMouseOver(id))}
@@ -32,11 +31,11 @@ const NavBarIcon = (props) => {
                 : icons[id].isHovering
                 ? 3.5
                 : 0
-            }px solid #EBECF0`,
+            }px solid ${icons[id].isClicked ? "black" : "#EBECF0"}`,
           }}
         >
-          <NavBarIconImg src={src} alt={`${name} placeholder`} />
-          <NavBarIconName>{name}</NavBarIconName>
+          <NavBarIconImg src={src} alt={`${title}} placeholder`} />
+          <NavBarIconName>{title}</NavBarIconName>
         </NavBarIconContainer>
       </Link>
     </>

@@ -1,3 +1,3 @@
 {
-  "/api/navIcons": "/$1"
+  "/wishlist/:id": "/wishlist/:id"
 }

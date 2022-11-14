@@ -1,15 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import iconData from "../../../mock/nav-icons.json"
 import axios from 'axios';
 
 export const fetchNavIcons = createAsyncThunk("/fetchNavIcons", async () => {
   const response = await axios.get("https://my-json-server.typicode.com/strawberryCheeseCake2/apis/nav-icons");
-  console.log("fetched")
   return response.data;
 });
 
 const initialState = {
   icons: [],
+  clickedItemId: "",
   status: "idle",
   error: null
 }
@@ -19,16 +18,17 @@ export const navBarSlice = createSlice({
   initialState,
   reducers: {
     handleClick: (state, action) => {
+      let clickedItemIndex;
       state.icons.forEach((icon) => {
         if (icon.id === action.payload) {
           icon.isClicked = true;
-          icon.isHovering = false;
+          clickedItemIndex = icon.id;
         }
         else {
           icon.isClicked = false;
-          icon.isHovering = false;
         }
       });
+      state.clickedItemId = clickedItemIndex;
     },
     handleMouseOver: (state, action) => {
       state.icons.forEach((icon) => {
@@ -57,7 +57,7 @@ export const navBarSlice = createSlice({
         state.icons = iconData.map((icon) => {
           return {
             ...icon,
-            isClicked: icon.id == 0 ? true : false,
+            isClicked: icon.id === 0 ? true : false,
             isHovering: false,
           }
         })

@@ -2,18 +2,17 @@ import './App.css';
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
   Navigate,
 } from "react-router-dom";
 
 import Header from './infrastructure/header/header.component';
-import Beach from './routes/category/beach.component';
-import AmazingViews from './routes/category/amazing-views.component';
+import RoomsScreen from './features/rooms/screens/rooms-screen.component';
+import WishlistScreen from './features/wishlists/screens/wishlist-screen.compoent';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate replace to={"category=beach/"} />,
+    element: <Navigate replace to={"category=0/"} />,
   },
   {
     path: "/",
@@ -21,14 +20,14 @@ const router = createBrowserRouter([
     children: [
       {
         // index: true, 
-        path: "category=beach/",
-        element: <Beach />,
-      },
-      {
-        path: "category=amazing-views/",
-        element: <AmazingViews />,
+        path: "category=:id/",
+        element: <RoomsScreen />,
       },
     ]
+  },
+  {
+    path: "wishlist/",
+    element: <WishlistScreen />,
   },
 ]);
 
