@@ -1,10 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { Axios } from 'axios';
 
 export const fetchWishlist = createAsyncThunk("wishlist/fetchWishlistItems", async () => {
   const response = await axios.get(
     // "https://my-json-server.typicode.com/strawberryCheeseCake2/apis/wishlist/",
     "http://localhost:4000/wishlist",
+    // "https://63723858025414c6370971c2.mockapi.io/wishlist/",
   );
   console.log("fetched");
   return response.data;
@@ -16,20 +18,26 @@ export const addNewItemToWishlist = createAsyncThunk(
     const response = await axios.post(
       // "https://my-json-server.typicode.com/strawberryCheeseCake2/apis/wishlist/",
       "http://localhost:4000/wishlist/",
+      // "https://63723858025414c6370971c2.mockapi.io/wishlist/",
       itemToAdd);
-      console.log(itemToAdd)
+    // const response = await axios.put(
+    //   // "https://my-json-server.typicode.com/strawberryCheeseCake2/apis/wishlist/",
+    //   // "http://localhost:4000/wishlist/" + itemToAdd.id,
+    //   // "https://63723858025414c6370971c2.mockapi.io/wishlist/" + itemToAdd.id,
+    //   itemToAdd);
+    //   console.log(itemToAdd)
       console.log(response.data);
       return response.data;
   }
 )
 
-// PUT Request
 export const removeItemFromWishlist = createAsyncThunk(
   "wishlist/removeItemFromWishlist", 
   async (itemToRemove) => {
     const response = await axios.delete(
       // "https://my-json-server.typicode.com/strawberryCheeseCake2/apis/wishlist/",
-      "http://localhost:4000/wishlist/" 
+      "http://localhost:4000/wishlist/"
+      // "https://63723858025414c6370971c2.mockapi.io/wishlist/" 
       + itemToRemove.id);
       console.log(response.data);
       return response.data;

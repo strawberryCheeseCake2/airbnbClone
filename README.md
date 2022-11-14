@@ -17,6 +17,6 @@
 
 ## Milestones
 - [X] ~ 11/13: Migrate Navigation Icons to Redux
-- [ ] ~ 11/20: Create Accommodation Card, Card List (getting data using Redux), Learn Redux-thunk
-- [ ] ~ 11/27: Whishlist Barebone, Addition to Wishlist, Deletion from Wishlist
+- [X] ~ 11/20: Create Accommodation Card, Card List (getting data using Redux), Learn Redux-thunk
+- [X] ~ 11/27: Whishlist Barebone, Addition to Wishlist, Deletion from Wishlist
 - [ ] 2023 January ~: Migrate Mock APIs to Node.js REST APIs

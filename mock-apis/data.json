@@ -92,5 +92,20 @@
       "src": "https://picsum.photos/id/85/500"
     }
   ],
-  "wishlist": []
+  "wishlist": [
+    {
+      "id": 6,
+      "location": "Location 5",
+      "category": 0,
+      "price": 300,
+      "src": "https://picsum.photos/id/29/500"
+    },
+    {
+      "id": 4,
+      "location": "Location 3",
+      "category": 0,
+      "price": 200,
+      "src": "https://picsum.photos/id/27/500"
+    }
+  ]
 }
