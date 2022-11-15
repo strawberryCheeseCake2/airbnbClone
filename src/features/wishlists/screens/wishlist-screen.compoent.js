@@ -3,20 +3,23 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import TopHeader from '../../../infrastructure/header/top-header/top-header.component';
 
-import { fetchWishlist, toggleTriggerRerender } from '../wishlistSlice';
+import { fetchWishlist, 
+  // toggleTriggerRerender
+ } from '../wishlistSlice';
 
 const WishlistScreen = () => {
   const dispatch = useDispatch();
   const wishlist = useSelector(state => state.wishlist.wishlistItems);
   const wishlistStatus = useSelector(state => state.wishlist.status);
-  const error = useSelector(state => state.wishlist.error);
+  const { error } = useSelector(state => state.wishlist);
   
   const { shouldScreenRerender } = useSelector(state => state.wishlist);
 
   useEffect(() => {
-    if (wishlistStatus === "idle" || shouldScreenRerender) {
+    // if (wishlistStatus === "idle" || shouldScreenRerender) {
+    if (wishlistStatus === "idle" ) {
       dispatch(fetchWishlist());
-      dispatch(toggleTriggerRerender());
+      //dispatch(toggleTriggerRerender());
     }
   }, [wishlistStatus, dispatch, wishlist, shouldScreenRerender]);
 

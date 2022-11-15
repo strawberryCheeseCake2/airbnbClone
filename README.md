@@ -6,7 +6,11 @@
   - Like
   - Filter
   - Image carousal
-- Accommodation page
+  - Rating
+- Room page
+  - Like
+  - Comment
+  - Rating
 - Map
 
 ## What frameworks/libraries to use?
@@ -20,3 +24,7 @@
 - [X] ~ 11/20: Create Accommodation Card, Card List (getting data using Redux), Learn Redux-thunk
 - [X] ~ 11/27: Whishlist Barebone, Addition to Wishlist, Deletion from Wishlist
 - [ ] 2023 January ~: Migrate Mock APIs to Node.js REST APIs
+
+
+## Issues
+

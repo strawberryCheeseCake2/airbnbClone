@@ -9,10 +9,11 @@ import {
   fetchWishlist,
   addNewItemToWishlist,
   removeItemFromWishlist,
-  toggleTriggerRerender
+  deletedItemFromWishlist,
+ // toggleTriggerRerender
 } from "../../wishlists/wishlistSlice";
 
-const Like = ({ item }) => {
+const Like = ({item}) => {
   const { id } = item;
   const itemId = id;
 
@@ -36,15 +37,17 @@ const Like = ({ item }) => {
       (itemInList) => itemInList.id === itemId
     );
 
-    if (foundItem) setIsItemInWishlist(true);
+    if (foundItem) {
+      // console.log(wishlistItems)
+      // console.log(`found item! : ${foundItem.id} Fill Heart!`)
+      setIsItemInWishlist(true);
+    }
     else setIsItemInWishlist(false);
   }, [itemId, wishlistItems]);
 
   const onLikeClickAdd = async () => {
       try {
         setAddRequestStatus("pending");
-        console.log("will add item");
-        console.log(item)
         await dispatch(addNewItemToWishlist(item)).unwrap();
         setIsItemInWishlist(true);
       } catch (err) {
@@ -52,7 +55,7 @@ const Like = ({ item }) => {
       } finally {
         setAddRequestStatus("idle");
 
-        dispatch(toggleTriggerRerender());
+        //dispatch(toggleTriggerRerender());
       }
   };
 
@@ -60,13 +63,14 @@ const Like = ({ item }) => {
     try {
       setRemoveRequestStatus("pending");
       await dispatch(removeItemFromWishlist(item)).unwrap();
+      dispatch(deletedItemFromWishlist(item.id)); // why not refetch automatically?
       setIsItemInWishlist(false);
     } catch (err) {
       console.error("Failed to delete the item: ", err);
     } finally {
       setAddRequestStatus("idle");
 
-      dispatch(toggleTriggerRerender());
+      //dispatch(toggleTriggerRerender());
     }
   };
 

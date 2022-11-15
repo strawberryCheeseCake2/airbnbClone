@@ -8,7 +8,7 @@ export const fetchNavIcons = createAsyncThunk("/fetchNavIcons", async () => {
 
 const initialState = {
   icons: [],
-  clickedItemId: "",
+  clickedIconId: "",
   status: "idle",
   error: null
 }
@@ -28,7 +28,7 @@ export const navBarSlice = createSlice({
           icon.isClicked = false;
         }
       });
-      state.clickedItemId = clickedItemIndex;
+      state.clickedIconId = clickedItemIndex;
     },
     handleMouseOver: (state, action) => {
       state.icons.forEach((icon) => {

@@ -18,7 +18,7 @@ const NavBarIcon = (props) => {
 
   return (
     <>
-      <Link to={`category=${id}/`} style={{ textDecoration: "none" }}>
+      <Link to={`category=${id}/`} style={{ textDecoration: "none", padding: 0, }}>
         <NavBarIconContainer
           onClick={() => dispatch(handleClick(id))}
           onMouseOver={() => dispatch(handleMouseOver(id))}

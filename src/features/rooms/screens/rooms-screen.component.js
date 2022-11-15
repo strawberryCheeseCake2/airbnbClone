@@ -8,33 +8,65 @@ import Card from '../components/card.component';
 import { RoomsContainer } from './rooms-screen.styles';
 
 const RoomsScreen = () => {
-  let categoryId = useParams().id;
+  let categoryId = useParams().id - '0';
 
   const dispatch = useDispatch();
-  const rooms = useSelector(state => state.rooms.rooms);
+  const allRooms = useSelector(state => state.rooms.rooms);
   const roomsStatus = useSelector(state => state.rooms.status);
   const error = useSelector(state => state.rooms.error);
+  const { fetchedCategories } = useSelector(state => state.rooms);
   
-  const isInit = useRef(true);
   const [isCategoryChanged, setCategoryChanged] = useState(false);
+  const { clickedIconId } = useSelector(state => state.navBar);
+
+  const isInit = useRef(true);
+
+  // useEffect(() => {
+  //   //setCategoryChanged(true);
+  //   console.log("changed!")
+  // }, [clickedIconId])
+
+  useEffect(() => {
+    if (roomsStatus === "idle") {
+      console.log("idle fetched room!!")
+      dispatch(fetchRooms(categoryId));
+      //setCategoryChanged(false)
+    }
+  }, [categoryId, roomsStatus, dispatch]);
 
   useEffect(() => {
     if (isInit.current) isInit.current = false;
     else {
-      setCategoryChanged(true);  
-    }
-    if (roomsStatus === "idle" || isCategoryChanged) {
-      dispatch(fetchRooms(categoryId));
-      setCategoryChanged(false);
-    }
-  }, [categoryId, roomsStatus, dispatch]);
+      const everFetched = fetchedCategories.find((category) => category.id === categoryId);
+      if (!everFetched) {
+        dispatch(fetchRooms(categoryId));
+      }
+    }   
+  }, [categoryId, dispatch, fetchedCategories]);
+  // useEffect(() => {
+  //   const fetchedCategory = fetchedCategories.find((category) => category === categoryId);
+  //   // console.log(fetchedCategories)
+  //   // console.log(fetchedCategory)
+  //   if (roomsStatus === "idle" || (isCategoryChanged && !fetchedCategory)) {
+  //     setCategoryChanged(false);
+
+  //     console.log("fetched room!!")
+  //     console.log(roomsStatus)
+  //     console.log(fetchedCategories)
+  //     console.log(isCategoryChanged)
+  //     console.log(fetchedCategory)
+  //     dispatch(fetchRooms(categoryId));
+  //   }
+  // }, [categoryId, roomsStatus, dispatch, isCategoryChanged, fetchedCategories, clickedIconId]);
 
   let content;
  
   if (roomsStatus === 'loading') {
     content = <h1>Loading</h1>
   } else if (roomsStatus === 'succeeded') {
-    content = rooms.map((room) => (
+    const filteredRooms = allRooms.filter(room => room.category === categoryId);
+
+    content = filteredRooms.map((room) => (
         <Card key={room.id} room={room} />
       )
     )

@@ -1,3 +1,5 @@
 {
-  "/wishlist/:id": "/wishlist/:id"
+  "/wishlist/:id/": "/wishlist/:id",
+  "/wishlist/:id": "/wishlist/:id/",
+  "wishlist/:id": "/wishlist/:id"
 }
