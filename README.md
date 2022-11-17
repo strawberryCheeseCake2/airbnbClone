@@ -1,30 +1,15 @@
-# Airbnb Clone project
+# :airplane: 에어비앤비 위시리스트 클론
 
-## What to implement?
-- Main page
-  - Search
-  - Like
-  - Filter
-  - Image carousal
-  - Rating
-- Room page
-  - Like
-  - Comment
-  - Rating
-- Map
+## :heartpulse: 구현된 기능
+json-server의 API를 fetch하여 위시리스트 추가/삭제
 
-## What frameworks/libraries to use?
-- React
-  - State Management: Redux
-  - Styles: Styled Components
-- Node.js (~2023, currently working with mock APIs)
+## :hammer: 기술 스택
+**Client**
+- React.js
+- Redux(Redux Toolkit, Redux Thunk)
 
-## Milestones
-- [X] ~ 11/13: Migrate Navigation Icons to Redux
-- [X] ~ 11/20: Create Accommodation Card, Card List (getting data using Redux), Learn Redux-thunk
-- [X] ~ 11/27: Whishlist Barebone, Addition to Wishlist, Deletion from Wishlist
-- [ ] 2023 January ~: Migrate Mock APIs to Node.js REST APIs
+**Server**
+- json-server (mock API)
 
 
-## Issues
 
