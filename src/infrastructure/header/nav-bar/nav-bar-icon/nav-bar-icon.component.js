@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { handleClick, handleMouseOut, handleMouseOver } from "../navBarSlice";
 
@@ -16,9 +16,15 @@ const NavBarIcon = (props) => {
   const dispatch = useDispatch();
   const icons = useSelector((state) => state.navBar.icons);
 
+  const urlId = useParams().id - '0';
+
+  useEffect(() => {
+    dispatch(handleClick(urlId));
+  });
+
   return (
     <>
-      <Link to={`category=${id}/`} style={{ textDecoration: "none", padding: 0, }}>
+      <Link to={`category=${id}/`} style={{ textDecoration: "none", padding: 0, marginRight: "3rem",}}>
         <NavBarIconContainer
           onClick={() => dispatch(handleClick(id))}
           onMouseOver={() => dispatch(handleMouseOver(id))}

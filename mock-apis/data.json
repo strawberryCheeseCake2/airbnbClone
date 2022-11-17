@@ -94,25 +94,46 @@
   ],
   "wishlist": [
     {
+      "id": 10,
+      "location": "Location 9",
+      "category": 0,
+      "price": 200,
+      "src": "https://picsum.photos/id/87/500"
+    },
+    {
+      "id": 6,
+      "location": "Location 5",
+      "category": 0,
+      "price": 300,
+      "src": "https://picsum.photos/id/29/500"
+    },
+    {
+      "id": 1,
+      "location": "Jeju, South Korea",
+      "category": 0,
+      "price": 50,
+      "src": "/assets/thumbnails/jeju_thumbnail1.jpg"
+    },
+    {
+      "id": 8,
+      "location": "Location 7",
+      "category": 1,
+      "price": 100,
+      "src": "https://picsum.photos/id/74/500"
+    },
+    {
+      "id": 11,
+      "location": "Location 10",
+      "category": 1,
+      "price": 250,
+      "src": "https://picsum.photos/id/85/500"
+    },
+    {
       "id": 3,
       "location": "Toronto, Canada",
       "category": 0,
       "price": 150,
       "src": "/assets/thumbnails/tor_thumbnail1.jpg"
-    },
-    {
-      "id": 4,
-      "location": "Location 3",
-      "category": 0,
-      "price": 200,
-      "src": "https://picsum.photos/id/27/500"
-    },
-    {
-      "id": 5,
-      "location": "Location 4",
-      "category": 1,
-      "price": 250,
-      "src": "https://picsum.photos/id/28/500"
     }
   ]
 }

@@ -11,7 +11,6 @@ export const NavBarIconContainer = styled.div`
   &:hover {
     opacity: 1;
   }
-  margin-right: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;

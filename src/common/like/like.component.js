@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   StyledUnfilledLikeSvg as Unfilled,
   StyledFilledLikeSvg as Filled,
-} from "../../rooms/components/card.styles";
+} from "./like.styles";
 import {
   fetchWishlist,
   addNewItemToWishlist,
   removeItemFromWishlist,
   deletedItemFromWishlist,
  // toggleTriggerRerender
-} from "../../wishlists/wishlistSlice";
+} from "../../features/wishlists/wishlistSlice";
 
 const Like = ({item}) => {
   const { id } = item;

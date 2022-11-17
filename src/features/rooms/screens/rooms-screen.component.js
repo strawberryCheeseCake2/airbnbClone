@@ -4,7 +4,8 @@ import { useParams } from 'react-router-dom';
 
 import { fetchRooms } from '../roomsSlice';
 
-import Card from '../components/card.component';
+import Card from '../../../common/card/card.component';
+import RoomCardPlaceholder from '../components/room-card-placeholder/room-card-placeholder.component';
 import { RoomsContainer } from './rooms-screen.styles';
 
 const RoomsScreen = () => {
@@ -15,9 +16,6 @@ const RoomsScreen = () => {
   const roomsStatus = useSelector(state => state.rooms.status);
   const error = useSelector(state => state.rooms.error);
   const { fetchedCategories } = useSelector(state => state.rooms);
-  
-  const [isCategoryChanged, setCategoryChanged] = useState(false);
-  const { clickedIconId } = useSelector(state => state.navBar);
 
   const isInit = useRef(true);
 
@@ -62,7 +60,8 @@ const RoomsScreen = () => {
   let content;
  
   if (roomsStatus === 'loading') {
-    content = <h1>Loading</h1>
+    
+    content = [...Array(10)].map(() => <RoomCardPlaceholder />);
   } else if (roomsStatus === 'succeeded') {
     const filteredRooms = allRooms.filter(room => room.category === categoryId);
 

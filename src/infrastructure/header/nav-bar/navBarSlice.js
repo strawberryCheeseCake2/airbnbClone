@@ -57,7 +57,7 @@ export const navBarSlice = createSlice({
         state.icons = iconData.map((icon) => {
           return {
             ...icon,
-            isClicked: icon.id === 0 ? true : false,
+            isClicked: false,
             isHovering: false,
           }
         })

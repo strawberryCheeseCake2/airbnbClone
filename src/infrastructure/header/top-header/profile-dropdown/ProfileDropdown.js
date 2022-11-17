@@ -5,8 +5,8 @@ const ProfileDropdown = () => {
   return (
     <>
     {/* ProfileDropdown */}
-      <Link to="wishlist/" style={{textDecoration: "none", color: "black"}}>
-        Wishlist
+      <Link to="/wishlist/" style={{textDecoration: "none", color: "black"}}>
+        <span style={{fontSize: "1.2rem",}}>Wishlists</span>
       </Link>
     </>
   )

@@ -2,6 +2,7 @@ import { React, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import NavBarIcon from './nav-bar-icon/nav-bar-icon.component';
+import NavBarIconPlaceholder from './nav-bar-icon-placeholder/nav-bar-icon-placeholder.component';
 
 import { NavBarContainer } from './nav-bar.styles';
 
@@ -23,7 +24,7 @@ const NavBar = () => {
   let content;
  
   if (navBarIconStatus === 'loading') {
-    content = <h1>Loading</h1>
+    content = [...Array(10)].map(() => <NavBarIconPlaceholder />);
   } else if (navBarIconStatus === 'succeeded') {
     content = icons.map((icon) => (
         <NavBarIcon 
