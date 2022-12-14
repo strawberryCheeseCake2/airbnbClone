@@ -10,7 +10,7 @@ export const NavBarIconPlaceholderContainer = styled.div`
 
 export const NavBarIconPlaceholderImg = styled.div`
   border-radius: 50%;
-  background-color: #DDDDDD;
+  background-color: #dddddd;
   width: 3rem;
   height: 3rem;
   margin-bottom: 0.5rem;
@@ -18,7 +18,7 @@ export const NavBarIconPlaceholderImg = styled.div`
 
 export const NavBarIconPlaceholderName = styled.div`
   border-radius: 0.2rem;
-  background-color: #DDDDDD;
+  background-color: #dddddd;
   width: 3.5rem;
   height: 0.7rem;
 `;

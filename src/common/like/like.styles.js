@@ -3,7 +3,7 @@ import { ReactComponent as UnfilledLike } from "../../svgs/like-icon-unfilled.sv
 import { ReactComponent as FilledLike } from "../../svgs/like-icon-filled.svg";
 
 export const StyledUnfilledLikeSvg = styled(UnfilledLike)`
-  color: #FF5A60;
+  color: #ff5a60;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
@@ -14,7 +14,7 @@ export const StyledUnfilledLikeSvg = styled(UnfilledLike)`
 `;
 
 export const StyledFilledLikeSvg = styled(FilledLike)`
-  color: #FF5A60;
+  color: #ff5a60;
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;

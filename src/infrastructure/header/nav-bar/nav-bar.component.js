@@ -1,47 +1,37 @@
-import { React, useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { React, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import NavBarIcon from './nav-bar-icon/nav-bar-icon.component';
-import NavBarIconPlaceholder from './nav-bar-icon-placeholder/nav-bar-icon-placeholder.component';
+import NavBarIcon from "./nav-bar-icon/nav-bar-icon.component";
+import NavBarIconPlaceholder from "./nav-bar-icon-placeholder/nav-bar-icon-placeholder.component";
 
-import { NavBarContainer } from './nav-bar.styles';
+import { NavBarContainer } from "./nav-bar.styles";
 
-import { fetchNavIcons } from './navBarSlice';
+import { fetchNavIcons } from "./navBarSlice";
 
 const NavBar = () => {
   const dispatch = useDispatch();
   const icons = useSelector((state) => state.navBar.icons);
-  const navBarIconStatus = useSelector((state) => state.navBar.status)
-  const error = useSelector((state) => state.navBar.error)
-  
+  const navBarIconStatus = useSelector((state) => state.navBar.status);
+  const error = useSelector((state) => state.navBar.error);
+
   useEffect(() => {
-    if (navBarIconStatus === 'idle') {
-      dispatch(fetchNavIcons())
+    if (navBarIconStatus === "idle") {
+      dispatch(fetchNavIcons());
     }
   }, [navBarIconStatus, dispatch]);
   // It will fetch twice due to React.StricMode
 
   let content;
- 
-  if (navBarIconStatus === 'loading') {
+
+  if (navBarIconStatus === "loading") {
     content = [...Array(10)].map(() => <NavBarIconPlaceholder />);
-  } else if (navBarIconStatus === 'succeeded') {
-    content = icons.map((icon) => (
-        <NavBarIcon 
-          key={icon.id}
-          icon={icon}
-        />
-      )
-    )
-  } else if (navBarIconStatus === 'failed') {
-    content = <div>{error}</div>
+  } else if (navBarIconStatus === "succeeded") {
+    content = icons.map((icon) => <NavBarIcon key={icon.id} icon={icon} />);
+  } else if (navBarIconStatus === "failed") {
+    content = <div>{error}</div>;
   }
 
-  return (
-    <NavBarContainer>
-      {content}
-    </NavBarContainer>
-  )
-}
+  return <NavBarContainer>{content}</NavBarContainer>;
+};
 
-export default NavBar
+export default NavBar;

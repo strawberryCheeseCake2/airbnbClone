@@ -1,10 +1,11 @@
-import React from 'react'
+import React from "react";
 
-import { RoomCardPlaceholderContainer,
-        RoomCardPlaceholderDivImg,
-        RoomCardPlaceholderDivLong,
-        RoomCardPlaceholderDivShort
- } from './room-card-placeholder.styles'
+import {
+  RoomCardPlaceholderContainer,
+  RoomCardPlaceholderDivImg,
+  RoomCardPlaceholderDivLong,
+  RoomCardPlaceholderDivShort,
+} from "./room-card-placeholder.styles";
 
 const RoomCardPlaceholder = () => {
   return (
@@ -15,7 +16,7 @@ const RoomCardPlaceholder = () => {
         <RoomCardPlaceholderDivShort />
       </RoomCardPlaceholderContainer>
     </>
-  )
-}
+  );
+};
 
-export default RoomCardPlaceholder
+export default RoomCardPlaceholder;

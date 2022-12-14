@@ -10,10 +10,10 @@ import {
   addNewItemToWishlist,
   removeItemFromWishlist,
   deletedItemFromWishlist,
- // toggleTriggerRerender
+  // toggleTriggerRerender
 } from "../../features/wishlists/wishlistSlice";
 
-const Like = ({item}) => {
+const Like = ({ item }) => {
   const { id } = item;
   const itemId = id;
 
@@ -41,22 +41,21 @@ const Like = ({item}) => {
       // console.log(wishlistItems)
       // console.log(`found item! : ${foundItem.id} Fill Heart!`)
       setIsItemInWishlist(true);
-    }
-    else setIsItemInWishlist(false);
+    } else setIsItemInWishlist(false);
   }, [itemId, wishlistItems]);
 
   const onLikeClickAdd = async () => {
-      try {
-        setAddRequestStatus("pending");
-        await dispatch(addNewItemToWishlist(item)).unwrap();
-        setIsItemInWishlist(true);
-      } catch (err) {
-        console.error("Failed to save the post: ", err);
-      } finally {
-        setAddRequestStatus("idle");
+    try {
+      setAddRequestStatus("pending");
+      await dispatch(addNewItemToWishlist(item)).unwrap();
+      setIsItemInWishlist(true);
+    } catch (err) {
+      console.error("Failed to save the post: ", err);
+    } finally {
+      setAddRequestStatus("idle");
 
-        //dispatch(toggleTriggerRerender());
-      }
+      //dispatch(toggleTriggerRerender());
+    }
   };
 
   const onLikeClickDelete = async () => {

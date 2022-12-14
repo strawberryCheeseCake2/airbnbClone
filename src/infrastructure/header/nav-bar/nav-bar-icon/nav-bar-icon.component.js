@@ -16,7 +16,7 @@ const NavBarIcon = (props) => {
   const dispatch = useDispatch();
   const icons = useSelector((state) => state.navBar.icons);
 
-  const urlId = useParams().id - '0';
+  const urlId = useParams().id - "0";
 
   useEffect(() => {
     dispatch(handleClick(urlId));
@@ -24,7 +24,10 @@ const NavBarIcon = (props) => {
 
   return (
     <>
-      <Link to={`category=${id}/`} style={{ textDecoration: "none", padding: 0, marginRight: "3rem",}}>
+      <Link
+        to={`category=${id}/`}
+        style={{ textDecoration: "none", padding: 0, marginRight: "3rem" }}
+      >
         <NavBarIconContainer
           onClick={() => dispatch(handleClick(id))}
           onMouseOver={() => dispatch(handleMouseOver(id))}
@@ -32,11 +35,7 @@ const NavBarIcon = (props) => {
           style={{
             opacity: icons[id].isClicked ? 1 : icons[id].isHovering ? 1 : 0.5,
             borderBottom: `${
-              icons[id].isClicked
-                ? 3.5
-                : icons[id].isHovering
-                ? 3.5
-                : 0
+              icons[id].isClicked ? 3.5 : icons[id].isHovering ? 3.5 : 0
             }px solid ${icons[id].isClicked ? "black" : "#EBECF0"}`,
           }}
         >
@@ -49,47 +48,3 @@ const NavBarIcon = (props) => {
 };
 
 export default NavBarIcon;
-
-/*
-Hooks
-  // const handleOnClick = (eventId) => {
-  //   const newEvent = { id: eventId, isClicked: true, isHovering: false };
-
-  //   const newCursorEvents = cursorEvents.map((cursorEvent) => {
-  //     if (cursorEvent.id === eventId) return newEvent;
-  //     else return { id: cursorEvent.id, isClicked: false, isHovering: false };
-  //   });
-  //   cursorEventsHandler(newCursorEvents);
-  // };
-
-   // const handleOnMouseOver = (eventId) => {
-  //   const newEvent = {
-  //     id: eventId,
-  //     isClicked: cursorEvents[eventId - 1].isClicked,
-  //     isHovering: true,
-  //   };
-
-  //   const newCursorEvents = cursorEvents.map((cursorEvent) => {
-  //     if (cursorEvent.id === eventId) return newEvent;
-  //     else return cursorEvent;
-  //   });
-
-  //   cursorEventsHandler(newCursorEvents);
-  // };
-
-  // const handleOnMouseOut = (eventId) => {
-  //   const newEvent = {
-  //     id: eventId,
-  //     isClicked: cursorEvents[eventId - 1].isClicked,
-  //     isHovering: false,
-  //   };
-
-  //   const newCursorEvents = cursorEvents.map((cursorEvent) => {
-  //     if (cursorEvent.id === eventId) return newEvent;
-  //     else return cursorEvent;
-  //   });
-
-  //   cursorEventsHandler(newCursorEvents);
-  // };
-
-*/

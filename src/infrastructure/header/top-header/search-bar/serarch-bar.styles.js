@@ -6,17 +6,17 @@ export const SearchBarContainer = styled.div`
   background-color: white;
   height: 3.5rem;
   width: 30rem;
-  border: 2px solid #EBECF0;
+  border: 2px solid #ebecf0;
   border-radius: 50px;
-  box-shadow: 0 0 10px 3px #EBECF0;
+  box-shadow: 0 0 10px 3px #ebecf0;
 
   display: flex;
   flex-direction: row;
   align-items: center;
-`
+`;
 
 export const SearchBarButton = styled.button`
-  background-color: #FF5A60;
+  background-color: #ff5a60;
   width: 2.7rem;
   height: 2.7rem;
   border: none;
@@ -34,11 +34,11 @@ export const SearchBarInput = styled.input`
   margin-left: 1rem;
   &::placeholder {
     font-size: 1.1rem;
-  };
+  }
 `;
 
 export const SearchBarForm = styled.form`
   flex: 1;
   display: flex;
   padding: 0.7rem;
-`
+`;

@@ -1,14 +1,13 @@
-import './App.css';
+import "./App.css";
 import {
   createBrowserRouter,
   RouterProvider,
   Navigate,
 } from "react-router-dom";
 
-import Header from './infrastructure/header/header.component';
-import RoomsScreen from './features/rooms/screens/rooms-screen.component';
-import WishlistScreen from './features/wishlists/screens/wishlist-screen.compoent';
-
+import Header from "./infrastructure/header/header.component";
+import RoomsScreen from "./features/rooms/screens/rooms-screen.component";
+import WishlistScreen from "./features/wishlists/screens/wishlist-screen.compoent";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +19,11 @@ const router = createBrowserRouter([
     element: <Header />,
     children: [
       {
-         index: true, 
+        index: true,
         path: "category=:id/",
         element: <RoomsScreen />,
       },
-    ]
+    ],
   },
   {
     path: "wishlist/",
@@ -34,7 +33,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className='outer-container'>
+    <div className="outer-container">
       <RouterProvider router={router} />
     </div>
   );

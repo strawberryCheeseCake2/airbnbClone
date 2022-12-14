@@ -29,8 +29,6 @@ export const CardImgContainer = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-
-
 export const CardTitle = styled.p`
   font-weight: bold;
   font-size: 1.3rem;

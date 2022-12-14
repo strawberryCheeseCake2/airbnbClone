@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div`
 
 export const StikcyContainer = styled.div`
   position: sticky;
-  top : 0px;
+  top: 0px;
   background: white;
   z-index: 10;
 `;

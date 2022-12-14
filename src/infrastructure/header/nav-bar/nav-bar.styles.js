@@ -7,4 +7,3 @@ export const NavBarContainer = styled.div`
   flex-direction: row;
   justify-content: center;
 `;
-

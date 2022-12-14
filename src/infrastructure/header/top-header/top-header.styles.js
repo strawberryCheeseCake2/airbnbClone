@@ -12,5 +12,5 @@ export const TopHeaderContainer = styled.div`
 `;
 
 export const AirbnbLogo = styled(Logo)`
-  color: #FF5A60;
+  color: #ff5a60;
 `;

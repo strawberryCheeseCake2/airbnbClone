@@ -1,8 +1,10 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 export const fetchNavIcons = createAsyncThunk("/fetchNavIcons", async () => {
-  const response = await axios.get("https://my-json-server.typicode.com/strawberryCheeseCake2/apis/nav-icons");
+  const response = await axios.get(
+    "https://my-json-server.typicode.com/strawberryCheeseCake2/apis/nav-icons"
+  );
   return response.data;
 });
 
@@ -10,11 +12,11 @@ const initialState = {
   icons: [],
   clickedIconId: "",
   status: "idle",
-  error: null
-}
+  error: null,
+};
 
 export const navBarSlice = createSlice({
-  name: 'navBar',
+  name: "navBar",
   initialState,
   reducers: {
     handleClick: (state, action) => {
@@ -23,8 +25,7 @@ export const navBarSlice = createSlice({
         if (icon.id === action.payload) {
           icon.isClicked = true;
           clickedItemIndex = icon.id;
-        }
-        else {
+        } else {
           icon.isClicked = false;
         }
       });
@@ -32,16 +33,15 @@ export const navBarSlice = createSlice({
     },
     handleMouseOver: (state, action) => {
       state.icons.forEach((icon) => {
-        if (icon.id === action.payload) 
-          icon.isHovering = true;
-      })
+        if (icon.id === action.payload) icon.isHovering = true;
+      });
     },
     handleMouseOut: (state, action) => {
       state.icons.forEach((icon) => {
         if (icon.id === action.payload) {
           icon.isHovering = false;
         }
-      })
+      });
     },
   },
   extraReducers(builder) {
@@ -51,25 +51,23 @@ export const navBarSlice = createSlice({
       })
       .addCase(fetchNavIcons.fulfilled, (state, action) => {
         state.status = "succeeded";
-        // Add any fetched posts to the array
-        //state.icons = state.icons.concat(action.payload);
         const iconData = action.payload;
         state.icons = iconData.map((icon) => {
           return {
             ...icon,
             isClicked: false,
             isHovering: false,
-          }
-        })
+          };
+        });
       })
       .addCase(fetchNavIcons.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
-      })
-  }
-})
+      });
+  },
+});
 
-// Action creators are generated for each case reducer function
-export const { handleClick, handleMouseOver, handleMouseOut } = navBarSlice.actions
+export const { handleClick, handleMouseOver, handleMouseOut } =
+  navBarSlice.actions;
 
-export default navBarSlice.reducer
+export default navBarSlice.reducer;
